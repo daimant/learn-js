@@ -2,64 +2,64 @@
 
 var a, b, c, d, x, value;
 
-alert( typeof x );              // возвращает тип
-alert( typeof(x) );             // возвращает тип
-alert( String(x) );             // преобр в стр
-alert( x );                     // преобр в стр
-alert( Number(x) );             // преобразует в число
-alert( Boolean(x) );            // преобразует в логич знач
-alert( +a );                    // преобразует в число
-alert( a % b );                 // остаток от деления a на b
-alert( a ** b );                // возведение a в степень b
-alert( a ** (1/2) );            // квадратный корнень
-alert( a ** (1/3) );            // кубический корнень
+console.log( typeof x );              // возвращает тип
+console.log( typeof(x) );             // возвращает тип
+console.log( String(x) );             // преобр в стр
+console.log( x );                     // преобр в стр
+console.log( Number(x) );             // преобразует в число
+console.log( Boolean(x) );            // преобразует в логич знач
+console.log( +a );                    // преобразует в число
+console.log( a % b );                 // остаток от деления a на b
+console.log( a ** b );                // возведение a в степень b
+console.log( a ** (1/2) );            // квадратный корнень
+console.log( a ** (1/3) );            // кубический корнень
 
 var name = "Ilya";
-alert( `hello ${1}` );          // hello 1
-alert( `hello ${"name"}` );     // hello name
-alert( `hello ${name}` );       // hello Ilya
+console.log( `hello ${1}` );          // hello 1
+console.log( `hello ${"name"}` );     // hello name
+console.log( `hello ${name}` );       // hello Ilya
 
-a = "" + 1 + 0;                 // '10'
-a = "" - 1 + 0;                 // -1
-a = true + false;               // 1
-a = 6 / "3";                    // 2
-a = "2" * "3";                  // 6
-a = 4 + 5 + "px";               // '9px'
-a = "$" + 4 + 5;                // '$45'
-a = "4" - 2;                    // 2
-a = "4px" - 2;                  // NaN
-a = 7 / 0;                      // Infinity
-a = "  -9  " + 5;               // '  -9  5'
-a = "  -9  " - 5;               // -14
-a = null + 1;                   // 1
-a = undefined + 1;              // NaN
-a = " \t \n" - 2;               // -2
+console.log("" + 1 + 0);              // '10'
+console.log("" - 1 + 0);              // -1
+console.log(true + false);            // 1
+console.log(6 / "3");                 // 2
+console.log("2" * "3");               // 6
+console.log(4 + 5 + "px");            // '9px'
+console.log("$" + 4 + 5);             // '$45'
+console.log("4" - 2);                 // 2
+console.log("4px" - 2);               // NaN
+console.log(7 / 0);                   // Infinity
+console.log("  -9  " + 5);            // '  -9  5'
+console.log("  -9  " - 5);            // -14
+console.log(null + 1);                // 1
+console.log(undefined + 1);           // NaN
+console.log(" \t \n" - 2);            // -2
 
 a = 1;
 b = 1;
-c = ++a;                        // a = 2; c = 2; инкремент, префиксная форма
-d = b--;                        // b = 0; d = 1; декремент, постфиксная форма
+c = ++a;                              // a = 2; c = 2; инкремент, префиксная форма
+d = b--;                              // b = 0; d = 1; декремент, постфиксная форма
 
 a = 2;
-x = 1 + (a *= 2);               // a = 4; x = 5;
+x = 1 + (a *= 2);                     // a = 4; x = 5;
 
-alert( 'Я' > 'А' );             // true
-alert( 'Кот' > 'Код' );         // true
-alert( 'Сонный' > 'Сон' );      // true
-alert( '2' > 1 );               // true, строка '2' становится числом 2
-alert( '01' == 1 );             // true, строка '01' становится числом 1
-alert( null == undefined );     // true
-alert( null === undefined );    // false
-alert( null > 0 );              // false
-alert( null == 0 );             // false
-alert( null >= 0 );             // true
-alert( undefined > 0 );         // false
-alert( undefined < 0 );         // false
-alert( undefined == 0 );        // false
+console.log( 'Я' > 'А' );             // true
+console.log( 'Кот' > 'Код' );         // true
+console.log( 'Сонный' > 'Сон' );      // true
+console.log( '2' > 1 );               // true, строка '2' становится числом 2
+console.log( '01' == 1 );             // true, строка '01' становится числом 1
+console.log( null == undefined );     // true
+console.log( null === undefined );    // false
+console.log( null > 0 );              // false
+console.log( null == 0 );             // false
+console.log( null >= 0 );             // true
+console.log( undefined > 0 );         // false
+console.log( undefined < 0 );         // false
+console.log( undefined == 0 );        // false
 
-alert( 'a' > 'А' );             // true
-alert( "ананас" > "яблоко" );   // false
-alert( "2" > "12" );            // true
-alert( undefined === null );    // false
-alert( null == "\n0\n" );       // false
-alert( null === +"\n0\n" );     // false
+console.log( 'a' > 'А' );             // true
+console.log( "ананас" > "яблоко" );   // false
+console.log( "2" > "12" );            // true
+console.log( undefined === null );    // false
+console.log( null == "\n0\n" );       // false
+console.log( null === +"\n0\n" );     // false

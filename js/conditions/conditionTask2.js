@@ -8,7 +8,7 @@
 var realNameJS = prompt('Какое "официальное" название JavaScript?', '');
 
 if (realNameJS == 'ECMAScript') {
-  alert( 'Верно!' );
+  console.log( 'Верно!' );
 } else {
-  alert( 'Не знаете? ECMAScript!' );
+  console.log( 'Не знаете? ECMAScript!' );
 }

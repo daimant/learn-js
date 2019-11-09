@@ -8,9 +8,9 @@
 var someNumber = prompt('Введите любое число: ', '');
 
 if (someNumber < 0) {
-  alert(-1);
+  console.log(-1);
 } else if (someNumber == 0) {
-  alert(0);
+  console.log(0);
 } else {
-  alert(1);
+  console.log(1);
 }
