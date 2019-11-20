@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 //  Следующая функция возвращает true, если параметр age больше 18.
 //  В ином случае она задаёт вопрос confirm и возвращает его результат.
@@ -17,11 +17,9 @@
 //  Используя оператор ||
 
 function checkAge(age) {
-  return (age > 18)
-    ? true
-    : confirm('Родители разрешили?');
+  return age > 18 ? true : confirm("Родители разрешили?");
 }
 
 function checkAge2(age) {
-  return (age > 18 || confirm('Родители разрешили'));
+  return age > 18 || confirm("Родители разрешили");
 }

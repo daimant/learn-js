@@ -13,7 +13,9 @@
 //  натуральные значения n, т.е. целые от 1 и выше.
 
 function makePow(a, b) {
-  if (a % 1 !== 0 || b % 1 !== 0) throw new Error("Введите целое");
+  if (a % 1 !== 0 || b % 1 !== 0) {
+    throw new Error("Введите целое");
+  }
 
   let result = 1;
   for (let i = 0; i < b; i++) {
