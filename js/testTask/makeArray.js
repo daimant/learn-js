@@ -12,71 +12,58 @@
 //Пушкин – alexandr@sergeevich.ru - 1799 Мертвые души – Николай Васильевич -
 //1841 Вий – Николая Васильевич - 1834 Пиковая дама - Пушкин - 1833
 
-let gogol = {
-  type: "human",
-  fullName: "Гоголь Николай Васильевич",
-  email: "gogol@google.com",
-  birtday: 1809
-};
-
-let pushkin = {
-  type: "human",
-  fullName: "Пушкин Александр Сергеевич",
-  email: "pushpush@mail.ru",
-  birtday: 1799
-};
-
-let lenmontov = {
-  type: "human",
-  fullName: "Лермонтов Михаил Юрьевич",
-  email: "lermomon@yandex.ru",
-  birtday: 1814
-};
-
-let overcoat = {
-  type: "book",
-  author: gogol,
-  title: "Шинель",
-  yearWriting: 1842
-};
-
-let captainDaughter = {
-  type: "book",
-  author: pushkin,
-  title: "Капитанская дочка",
-  yearWriting: 1836
-};
-
-let queenOfSpades = {
-  type: "book",
-  author: pushkin,
-  title: "Пиковая дама",
-  yearWriting: 1834
-};
-
-let heroOfOurTime = {
-  type: "book",
-  author: lenmontov,
-  title: "Герой нашего времени",
-  yearWriting: 1840
-};
-
-let novice = {
-  type: "book",
-  author: lenmontov,
-  title: "Мцыри",
-  yearWriting: 1840
-};
-
 let arr = [
-  gogol,
-  pushkin,
-  lenmontov,
-  overcoat,
-  captainDaughter,
-  queenOfSpades,
-  heroOfOurTime,
-  novice
+  {
+    id: "gogol",
+    type: "human",
+    fullName: "Гоголь Николай Васильевич",
+    email: "gogol@google.com",
+    birtday: 1809
+  },
+  {
+    id: "pushkin",
+    type: "human",
+    fullName: "Пушкин Александр Сергеевич",
+    email: "pushpush@mail.ru",
+    birtday: 1799
+  },
+  {
+    id: "lermontov",
+    type: "human",
+    fullName: "Лермонтов Михаил Юрьевич",
+    email: "lermomon@yandex.ru",
+    birtday: 1814
+  },
+  {
+    type: "book",
+    authorId: "gogol",
+    title: "Шинель",
+    yearWriting: 1842
+  },
+  {
+    type: "book",
+    authorId: "pushkin",
+    title: "Капитанская дочка",
+    yearWriting: 1836
+  },
+  {
+    type: "book",
+    authorId: "pushkin",
+    title: "Пиковая дама",
+    yearWriting: 1834
+  },
+  {
+    type: "book",
+    authorId: "lermontov",
+    title: "Герой нашего времени",
+    yearWriting: 1840
+  },
+  {
+    type: "book",
+    authorId: "lermontov",
+    title: "Мцыри",
+    yearWriting: 1840
+  }
 ];
 
 function showAuthors() {
@@ -98,17 +85,12 @@ function showAuthors() {
 
 function showBooks() {
   // функция выводит в консоль книги
-  let elementArr;
-  for (let i = 0; i < arr.length; i++) {
-    elementArr = arr[i];
-    if (elementArr.type === "book") {
-      console.log(
-        elementArr.title +
-          " - " +
-          elementArr.author.fullName +
-          " - " +
-          elementArr.yearWriting
+  for (const { type, title, yearWriting, authorId } of arr) {
+    if (type === "book") {
+      const { fullName } = arr.find(
+        ({ type, id }) => type === "human" && id === authorId
       );
+      console.log(`${title} - ${fullName} - ${yearWriting}`);
     }
   }
 }
