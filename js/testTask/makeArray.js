@@ -96,7 +96,7 @@ function showAuthors() {
   }
 }
 
-function showBook() {
+function showBooks() {
   // функция выводит в консоль книги
   let elementArr;
   for (let i = 0; i < arr.length; i++) {
@@ -114,4 +114,4 @@ function showBook() {
 }
 
 showAuthors();
-showBook();
+showBooks();
