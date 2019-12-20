@@ -10,19 +10,12 @@
 //  потом переделайте всё как нужно и методом join соедините обратно.
 
 function camelize(str) {
-  let camelArr = str.split("-");
-  if (
-    camelArr.find((element, index) => element[index] === "") ||
-    camelArr.length === 1
-  )
-    return "";
-  camelArr.forEach(
-    (element, index) =>
-      (element[index] =
-        element[index].toUpperCase()[1] + element[index].slice(1))
-  );
-  console.log(camelArr);
-  return camelArr.join("");
+  return str
+    .split("-")
+    .map((element, index) =>
+      index === 0 ? element : element[0].toUpperCase() + element.slice(1)
+    )
+    .join("");
 }
 
 console.log(camelize("background-color") == "backgroundColor");
