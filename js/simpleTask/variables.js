@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 //Объявите две переменные: admin и name.
 //Запишите строку "Джон" в переменную name.
@@ -7,15 +7,15 @@
 
 let admin;
 let name;
-name = 'Джон';
+name = "Джон";
 admin = name;
-console.log( admin );
+console.log(admin);
 
 //Создайте переменную для названия нашей планеты. Как бы вы её назвали?
 //Создайте переменную для хранения имени текущего посетителя сайта. Как бы вы назвали такую переменную?
 
-let ourPlanetName = 'Земля';
-let currentUserName = 'Ибрагим';
+let ourPlanetName = "Земля";
+let currentUserName = "Ибрагим";
 
-const BIRTHDAY = '05.07.1993';
+const BIRTHDAY = "05.07.1993";
 const age = someCode(BIRTHDAY);
