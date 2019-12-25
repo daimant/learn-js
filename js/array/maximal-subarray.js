@@ -17,11 +17,25 @@
 //
 //Попробуйте придумать быстрое решение: O(n2), а лучше за О(n) операций.
 
-function getMaxSubSum(startArr) {
-  return startArr;
+function getMaxSubSum(arrNumbers) {
+  let maxSubSum = 0,
+    subSum = 0;
+
+  for (let i = 0; i < arrNumbers.length; i++) {
+    if (arrNumbers[i] > subSum) {
+      subSum = arrNumbers[i];
+
+      for (let j = i + 1; j < arrNumbers.length; j++) {
+        if (subSum + arrNumbers[j] > subSum) {
+          subSum += arrNumbers[j];
+        } else break;
+      }
+    } else continue;
+  }
+  return subSum;
 }
 
-console.log(getMaxSubSum([1, -2, 3, 4, -9, 6]));
+console.log(getMaxSubSum([1, -2, 3, 4, -9, 6])); // = 7
 console.log(getMaxSubSum([-1, 2, 3, -9])); // = 5 (сумма выделенных)
 console.log(getMaxSubSum([2, -1, 2, 3, -9])); // = 6
 console.log(getMaxSubSum([-1, 2, 3, -9, 11])); // = 11
