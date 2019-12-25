@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 //Перепишите код, заменив цикл for на while, без изменения поведения цикла.
 //
@@ -8,6 +8,6 @@
 
 var i = 0;
 while (i < 3) {
-  console.log( `number ${i}!` );
+  console.log(`number ${i}!`);
   i++;
 }

@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 //Напишите код, который будет спрашивать логин с помощью prompt. Если посетитель
 //вводит «Админ», то prompt запрашивает пароль, если ничего не введено или
 //нажата клавиша Esc – показать «Отменено», в противном случае отобразить
@@ -7,25 +7,20 @@
 //Иначе – «Неверный пароль»,
 //При отмене – «Отменено».
 
-var login = prompt('Введите свой логин: ', '');
+var login = prompt("Введите свой логин: ", "");
 
-if (login == 'Админ') {
+if (login == "Админ") {
+  var passvord = prompt("Введите пароль: ", "");
 
-  var passvord = prompt('Введите пароль: ', '');
-
-  if (passvord == 'Я главный') {
-    console.log('Здравствуйте');
-  } else if (passvord === null || passvord == '') {
-    console.log('Отменено');
+  if (passvord == "Я главный") {
+    console.log("Здравствуйте");
+  } else if (passvord === null || passvord == "") {
+    console.log("Отменено");
   } else {
-    console.log('Неверный пароль');
+    console.log("Неверный пароль");
   }
-
-} else if (login == null || login == '') {
-  console.log('Отменено');
+} else if (login == null || login == "") {
+  console.log("Отменено");
 } else {
-  console.log('Я вас не знаю');
+  console.log("Я вас не знаю");
 }
-
-
-

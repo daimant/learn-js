@@ -17,22 +17,37 @@
 //
 //Попробуйте придумать быстрое решение: O(n2), а лучше за О(n) операций.
 
-function getMaxSubSum(arrNumbers) {
-  let maxSubSum = 0,
-    subSum = 0;
+function getMaxSubSum(arr) {
+  let maxSum = 0;
+  let subSum = 0;
 
-  for (let i = 0; i < arrNumbers.length; i++) {
-    if (arrNumbers[i] > subSum) {
-      subSum = arrNumbers[i];
+  for (let i = 0; i < arr.length; i++) {
+    subSum += arr[i];
 
-      for (let j = i + 1; j < arrNumbers.length; j++) {
-        if (subSum + arrNumbers[j] > subSum) {
-          subSum += arrNumbers[j];
-        } else break;
-      }
-    } else continue;
+    if (subSum > maxSum) {
+      maxSum = subSum;
+    }
+
+    if (subSum < 0) {
+      subSum = 0;
+    }
   }
-  return subSum;
+
+  //for (let i = 0; i < arr.length; i++) {
+  //  if (arr[i] > subSum) {
+  //    subSum = arr[i];
+  //
+  //    for (let j = i + 1; j < arr.length; j++) {
+  //      if (arr[i] + arr[j] > subSum) {
+  //        subSum += arr[j];
+  //      } else if (arr[i] + arr[j] + arr[ j + 1 ] > subSum) {
+  //        subSum += arr[j] + arr[j + 1];
+  //        j++;
+  //      } else break;
+  //    }
+  //  }
+  //}
+  return maxSum;
 }
 
 console.log(getMaxSubSum([1, -2, 3, 4, -9, 6])); // = 7

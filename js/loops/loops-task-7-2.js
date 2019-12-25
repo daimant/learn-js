@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 //  Натуральное число, большее 1, называется простым, если оно ни на что не
 //  делится, кроме себя и 1. Другими словами, n > 1 – простое, если при его
@@ -11,9 +11,8 @@
 var count = 1;
 var n = 1000;
 
-next:
-for (let i = 3; i <= n; i+=2) {
-  for (let j = 3; j <= Math.sqrt(i); j+=2) {
+next: for (let i = 3; i <= n; i += 2) {
+  for (let j = 3; j <= Math.sqrt(i); j += 2) {
     if (i % j == 0) continue next;
   }
   //console.log(i);
