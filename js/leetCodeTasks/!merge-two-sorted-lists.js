@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * Definition for singly-linked list.
@@ -38,7 +38,7 @@ var mergeTwoLists = function(l1, l2) {
     arr.push(l2.val);
   }
 
-  arr.sort((a,b) => a < b ? 1 : -1)
+  arr.sort((a, b) => (a < b ? 1 : -1));
   // ListNode(arr)
 
   // return arr.next;
