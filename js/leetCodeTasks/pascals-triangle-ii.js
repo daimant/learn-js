@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * @param {number} rowIndex
@@ -12,23 +12,22 @@ var getRow = function(rowIndex) {
   if (rowIndex + 1 === 1) return arr;
 
   for (let i = 2; i <= rowIndex + 1; i++) {
-
     for (let j = 0; j <= i; j++) {
       if (j === 0) {
         current.push(1);
         continue;
       }
 
-      if (j === i-1) {
+      if (j === i - 1) {
         current.push(1);
         break;
       }
 
-      current.push(arr[i - 2][j] + arr[i - 2][j - 1])
-
+      current.push(arr[i - 2][j] + arr[i - 2][j - 1]);
     }
     arr.push(current);
     current = [];
   }
-  return arr[arr.length-1];
+
+  return arr[arr.length - 1];
 };
