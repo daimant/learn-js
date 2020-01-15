@@ -1,5 +1,5 @@
 ```
 
-добрый вечер, я - диспетчер
+good evening, im dispetcher
 
 ```
