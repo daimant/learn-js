@@ -10,16 +10,18 @@
     "type": "git",
     "url": "git+https://github.com/daimant/learnJS.git"
   },
-  "author": "daimant",
+  "author": "Sergey Pomortsev",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/daimant/learnJS/issues"
+    "url": "https://github.com/daimant/learnJS/"
   },
   "homepage": "https://github.com/daimant/learnJS#readme",
   "dependencies": {
+    "axios": "^0.19.1",
     "husky": "^3.1.0",
     "prettier": "^1.19.1",
-    "pretty-quick": "^2.0.1"
+    "pretty-quick": "^2.0.1",
+    "vue": "^2.6.11"
   },
   "husky": {
     "hooks": {

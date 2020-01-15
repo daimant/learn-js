@@ -11,3 +11,17 @@ var app = new Vue({
     }
   }
 });
+
+new Vue({
+  el: "#api",
+  data() {
+    return {
+      info: null
+    };
+  },
+  mounted() {
+    axios
+      .get("https://jsonplaceholder.typicode.com/")
+      .then(response => (this.info = response));
+  }
+});
