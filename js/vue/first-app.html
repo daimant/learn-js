@@ -27,9 +27,21 @@
       <button v-on:click="counter++">плюс</button>
       <button v-on:click="if(counter>0) counter--;">минус</button>
       <div>{{counter}}</div>
+      <br />
+      <button v-on:click="increase(3, $event)">+</button>
+      <button v-on:click="decrease(2, $event)">-</button>
+      <div>{{counter2}}</div>
     </div>
     <hr />
     <div id="template"></div>
+    <hr />
+    <div id="link">
+      <div v-html="message"></div>
+      <div>{{message}}</div>
+      <br />
+      <a v-bind:href="link">{{text}}</a>
+      <p>{{age > 25?'Больше 25 лет':'25 лет или меньше' }}</p>
+    </div>
     <hr />
     <script>
       "use strict";
@@ -60,7 +72,7 @@
         //        }
       });
 
-      var app = new Vue({
+      var object = new Vue({
         el: "#object",
         data: { name: "Tom", age: 25 },
         methods: {
@@ -82,13 +94,32 @@
 
       var action = new Vue({
         el: "#action",
-        data: { counter: 0 }
+        data: { counter: 0, counter2: 0 },
+        methods: {
+          increase: function(n, event) {
+            this.counter2 = this.counter2 + n;
+          },
+          decrease: function(n, event) {
+            this.counter2 = this.counter2 - n;
+          }
+        }
       });
 
       var template = new Vue({
         el: "#template",
-        data: { name: "Tom", age: 25 },
+        data: { name: "Том", age: 25 },
         template: "<p>Имя: {{name}},  Возраст {{age}}</p>"
+      });
+
+      var link = new Vue({
+        el: "#link",
+        data: {
+          message: "<h2>Hello</h2>",
+          text: "Google",
+          link: "https://google.com",
+          name: "Tom",
+          age: 99
+        }
       });
     </script>
   </body>
