@@ -2,11 +2,18 @@
 <html xmlns:v-on="http://www.w3.org/1999/xhtml">
   <head>
     <title>Изучаем Vue.js</title>
+    <link rel="stylesheet" href="./style.css" />
     <meta charset="utf-8" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
   </head>
   <body>
+    <div id="style">
+      <div class="region" v-bind:class="classObj"></div>
+      <div class="region"></div>
+      <button v-on:click="isActive=!isActive">Toggle color</button>
+      <button v-on:click="isBounded=!isBounded">Toggle border</button>
+    </div>
     <div id="app">
       <input type="text" v-on:input="setMessage" />
       <p>{{message}}</p>
@@ -43,84 +50,26 @@
       <p>{{age > 25?'Больше 25 лет':'25 лет или меньше' }}</p>
     </div>
     <hr />
-    <script>
-      "use strict";
-
-      var app = new Vue({
-        el: "#app",
-        data: {
-          message: "Hello Vue!"
-        },
-        methods: {
-          setMessage: function(event) {
-            this.message = event.target.value;
-          }
-        }
-      });
-
-      var api = new Vue({
-        el: "#api",
-        data() {
-          return {
-            info: "здесь будут данные из апи"
-          };
-        }
-        //        mounted() {
-        //            axios
-        //                    .get('jsonplaceholder.typicode.com/posts')
-        //                    .then(response => (this.info = response));
-        //        }
-      });
-
-      var object = new Vue({
-        el: "#object",
-        data: { name: "Tom", age: 25 },
-        methods: {
-          welcome: function() {
-            return "Welcome";
-          },
-          displayName: function() {
-            return this.name;
-          },
-          factorial: function(n) {
-            var result = 1;
-            for (var i = 1; i <= n; i++) {
-              result = result * i;
-            }
-            return result;
-          }
-        }
-      });
-
-      var action = new Vue({
-        el: "#action",
-        data: { counter: 0, counter2: 0 },
-        methods: {
-          increase: function(n, event) {
-            this.counter2 = this.counter2 + n;
-          },
-          decrease: function(n, event) {
-            this.counter2 = this.counter2 - n;
-          }
-        }
-      });
-
-      var template = new Vue({
-        el: "#template",
-        data: { name: "Том", age: 25 },
-        template: "<p>Имя: {{name}},  Возраст {{age}}</p>"
-      });
-
-      var link = new Vue({
-        el: "#link",
-        data: {
-          message: "<h2>Hello</h2>",
-          text: "Google",
-          link: "https://google.com",
-          name: "Tom",
-          age: 99
-        }
-      });
-    </script>
+    <div id="twoWayBind">
+      <input type="text" v-model="name" />
+      <input type="text" v-model="number" />
+      <p>
+        Name: {{name}}, Факториал числа {{number}} равен {{factorial(number)}}
+      </p>
+    </div>
+    <hr />
+    <div id="calculatedProperties">
+      <input type="text" v-model="name" />
+      <input type="text" v-model="age" />
+      <p>Имя: {{name}} Возраст {{age}}</p>
+      <p>{{checkAge()}} {{enabled}}</p>
+      <hr />
+      <input type="text" v-model="firstname" />
+      <input type="text" v-model="lastname" />
+      <input type="text" v-model="fullname" />
+      <p>Имя: {{fullname}}</p>
+    </div>
+    <hr />
+    <script src="./first-app.js"></script>
   </body>
 </html>
