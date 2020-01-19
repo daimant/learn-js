@@ -34,7 +34,7 @@ var api = new Vue({
   },
   mounted() {
     axios
-      .post("https://jsonplaceholder.typicode.com/")
+      .get("https://jsonplaceholder.typicode.com/posts")
       .then(response => (this.info = response));
   }
 });
