@@ -5,7 +5,6 @@
  * @return {number}
  */
 var addDigits = function(num) {
-  let count = 0;
   let currentValue;
 
   while (1) {

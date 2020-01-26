@@ -2,26 +2,14 @@
 
 var app = new Vue({
   el: "#app",
-  data: {
-    message: "Hello Vue!"
-  },
-  methods: {
-    setMessage: function(event) {
-      this.message = event.target.value;
-    }
-  }
-});
 
-new Vue({
-  el: "#api",
-  data() {
-    return {
-      info: null
-    };
+  data: {
+    info: "здесь будут данные из апи",
+    currentPage: 0
   },
   mounted() {
     axios
-      .get("https://jsonplaceholder.typicode.com/")
+      .get("https://jsonplaceholder.typicode.com/posts")
       .then(response => (this.info = response));
   }
 });
