@@ -19,18 +19,30 @@
 //alert( sumTo(100) ); // 5050
 //P.S. Какой вариант решения самый быстрый? Самый медленный? Почему?
 //  P.P.S. Можно ли при помощи рекурсии посчитать sumTo(100000)?
-
-function sumTo(n) {
-  //let result = 0;
-  //for(let i = 1; i <= n; i++) {
-  //  result += i;
-  //}
-  //console.log((n * (n + 1)) / 2);
-
-  //let startTime = Date.now();
-  //console.log(Date.now() - startTime);
-
-  return n > 1 ? (n += sumTo(n - 1)) : n;
+function sumToWithRecursion(n) {
+  return n > 1 ? (n += sumToWithRecursion(n - 1)) : n;
 }
 
-console.log(sumTo(10000)); // = 100 + 99 + ... + 2 + 1 = 5050
+function sumToWithIteration(n) {
+  let startTime = Date.now();
+
+  let result = 0;
+  for (let i = 1; i <= n; i++) {
+    result += i;
+  }
+
+  return `iteration method result: ${result} and time ${Date.now() -
+    startTime} ms`;
+}
+
+function sumToWithArithmeticProgression(n) {
+  return (n * (n + 1)) / 2;
+}
+
+console.log(`recursion method result: ${sumToWithRecursion(10000)}`); // = 100 + 99 + ... + 2 + 1 = 5050
+console.log(sumToWithIteration(10000)); // = 100 + 99 + ... + 2 + 1 = 5050
+console.log(
+  `arithmetic progression method result: ${sumToWithArithmeticProgression(
+    10000
+  )}`
+);
