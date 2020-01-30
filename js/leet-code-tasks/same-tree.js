@@ -13,5 +13,5 @@
  * @return {boolean}
  */
 var isSameTree = function(p, q) {
-  return JSON.stringify(p) === JSON.stringify(q) ? true : false;
+  return JSON.stringify(p) === JSON.stringify(q);
 };
