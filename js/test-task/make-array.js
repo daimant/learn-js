@@ -18,21 +18,21 @@ let arr = [
     type: "human",
     fullName: "Гоголь Николай Васильевич",
     email: "gogol@google.com",
-    birtday: 1809
+    birthday: 1809
   },
   {
     id: "pushkin",
     type: "human",
     fullName: "Пушкин Александр Сергеевич",
     email: "pushpush@mail.ru",
-    birtday: 1799
+    birthday: 1799
   },
   {
     id: "lermontov",
     type: "human",
     fullName: "Лермонтов Михаил Юрьевич",
     email: "lermomon@yandex.ru",
-    birtday: 1814
+    birthday: 1814
   },
   {
     type: "book",
@@ -67,7 +67,6 @@ let arr = [
 ];
 
 function showAuthors() {
-  // функция выводит в консоль авторов
   let elementArr;
   for (let i = 0; i < arr.length; i++) {
     elementArr = arr[i];
@@ -77,14 +76,13 @@ function showAuthors() {
           " - " +
           elementArr.email +
           " - " +
-          elementArr.birtday
+          elementArr.birthday
       );
     }
   }
 }
 
 function showBooks() {
-  // функция выводит в консоль книги
   for (const { type, title, yearWriting, authorId } of arr) {
     if (type === "book") {
       const { fullName } = arr.find(
