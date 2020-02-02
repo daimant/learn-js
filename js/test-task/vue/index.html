@@ -1,28 +1,43 @@
 <!DOCTYPE html>
-<html xmlns:v-on="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <title>Тестовое задание</title>
     <meta charset="utf-8" />
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/vue"></script>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div id="app">
+      <ul>
+        <li>
+          <router-link to="/learnJS/js/test-task/vue/" exact>Home</router-link>
+        </li>
+        <li>
+          <router-link to="/learnJS/js/test-task/vue/postList"
+            >Post list</router-link
+          >
+        </li>
+        <li>
+          <router-link to="/learnJS/js/test-task/vue/about">about</router-link>
+        </li>
+      </ul>
+      <router-view></router-view>
+    </div>
+    <div id="api">
       <div class="title">{{ info.data[currentPage].title }}</div>
       <br />
       <div class="body">{{ info.data[currentPage].body }}</div>
       <br />
       <div class="btn-group">
-        <button class="bottom" v-on:click="if(currentPage > 0) currentPage--;">
+        <button class="button" v-on:click="if(currentPage > 0) currentPage--;">
           Предыдущий пост
         </button>
         {{currentPage}}
-        <button class="bottom" v-on:click="currentPage++">Следущий пост</button>
+        <button class="button" v-on:click="currentPage++">Следущий пост</button>
       </div>
-      <!--<div>{{ info.data[2] }}</div>-->
     </div>
-    <!--</div>-->
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>

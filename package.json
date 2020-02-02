@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "lite-server",
     "test": "echo tet"
   },
   "repository": {
@@ -27,5 +28,8 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
+  },
+  "devDependencies": {
+    "lite-server": "^2.5.4"
   }
 }
