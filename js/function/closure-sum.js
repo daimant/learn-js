@@ -6,9 +6,11 @@
 //sum(1)(2) = 3
 //sum(5)(-1) = 4
 
-function Closure(a) {}
+function g(a) {
+  return b => a + b;
+}
 
-let sum = Closure();
+let sum = g;
 
 console.log(sum(1)(2)); // = 3
 console.log(sum(5)(-1)); // = 4
