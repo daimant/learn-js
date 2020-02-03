@@ -1,14 +1,14 @@
 "use strict";
 
-const NotFound = { template: "<h2>Page Not Found</h2>" };
-const Home = { template: "<h2>Home Page</h2>" };
-const postList = { template: "<h2>post list</h2>" };
-const About = { template: "<h2>About Page</h2>" };
+const NotFound = { template: "<h2>Страница не найдена</h2>" };
+const Home = { template: "<h2>Стартовая страница</h2>" };
+const PostList = { template: "<h2>Список постов</h2>" };
+const Post = { template: `<h2>Пост: $route.:id<h2>` };
 
 const routes = [
   { path: "/learnJS/js/test-task/vue/", component: Home },
-  { path: "/learnJS/js/test-task/vue/postList", component: postList },
-  { path: "/learnJS/js/test-task/vue/about", component: About },
+  { path: "/learnJS/js/test-task/vue/post-list", component: PostList },
+  { path: "/learnJS/js/test-task/vue/post-:id", component: Post },
   { path: "/learnJS/js/test-task/vue/*", component: NotFound }
 ];
 
@@ -19,15 +19,10 @@ const router = new VueRouter({
 
 new Vue({
   el: "#app",
-  router: router
-});
-
-var api = new Vue({
-  el: "#api",
-
+  router: router,
   data: {
     info: "здесь будут данные из апи",
-    currentPage: 0
+    currentPost: 0
   },
   mounted() {
     axios

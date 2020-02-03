@@ -9,32 +9,39 @@
     <div id="app">
       <ul>
         <li>
-          <router-link to="/learnJS/js/test-task/vue/" exact>Home</router-link>
-        </li>
-        <li>
-          <router-link to="/learnJS/js/test-task/vue/postList"
-            >Post list</router-link
+          <router-link to="/learnJS/js/test-task/vue/" exact
+            >Стартовая страница</router-link
           >
         </li>
         <li>
-          <router-link to="/learnJS/js/test-task/vue/about">about</router-link>
+          <router-link to="/learnJS/js/test-task/vue/post-list"
+            >Список постов</router-link
+          >
+        </li>
+        <li>
+          <router-link to="/learnJS/js/test-task/vue/post-:id"
+            >Текущий пост: {{currentPost + 1}}</router-link
+          >
         </li>
       </ul>
-      <router-view></router-view>
-    </div>
-    <div id="api">
-      <div class="title">{{ info.data[currentPage].title }}</div>
+      <router-view style="text-align: center; min-height: 30px"></router-view>
       <br />
-      <div class="body">{{ info.data[currentPage].body }}</div>
+
+      <div class="title">{{ info.data[currentPost].title }}</div>
+      <br />
+      <div class="body">{{ info.data[currentPost].body }}</div>
       <br />
       <div class="btn-group">
-        <button class="button" v-on:click="if(currentPage > 0) currentPage--;">
+        <button class="button" v-on:click="if(currentPost > 0) currentPost--;">
           Предыдущий пост
         </button>
-        {{currentPage}}
-        <button class="button" v-on:click="currentPage++">Следущий пост</button>
+        {{currentPost + 1}} из {{info.data.length}}
+        <button class="button" v-on:click="if(currentPost < 99) currentPost++">
+          Следущий пост
+        </button>
       </div>
     </div>
+
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
