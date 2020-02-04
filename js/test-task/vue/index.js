@@ -2,7 +2,9 @@
 
 const NotFound = { template: "<h2>Страница не найдена</h2>" };
 const Home = { template: "<h2>Стартовая страница</h2>" };
-const PostList = { template: "<h2>Список постов</h2>" };
+const PostList = {
+  template: `<div><h2>Список постов</h2><span v-for="n in 10">{{ n }} </span></div>`
+};
 const Post = { template: `<h2>Пост: $route.:id<h2>` };
 
 const routes = [
