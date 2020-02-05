@@ -1,30 +1,22 @@
-"use strict";
-
 /**
  * @param {number} n
  * @return {number}
  */
-// тоже слишком жирное
 var countPrimes = function(n) {
-  let arr = [2];
+  let arr = [];
   for (let i = 2; i < n; i++) arr.push(i);
 
-  for (let i = 0; i < arr.length / 10; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[j] % arr[i] === 0) {
-        arr.splice(j, 1);
+  for (let i = 0; i < Math.sqrt(n); i++) {
+    if (arr[i]) {
+      for (let j = i + arr[i]; j < n; j += arr[i]) {
+        arr[j] = undefined;
       }
     }
   }
 
-  //console.log(arr);
-
-  return arr.length;
+  return arr.filter(item => item).length;
 };
 
-console.log();
-
-// слишком жирное
 //   let arr = [];
 //   for(let i = 2; i < n; i++) arr.push(i)
 //   let current;
