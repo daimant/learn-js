@@ -25,14 +25,6 @@ function quabonacci(n) {
 
 console.log(quabonacci(1000));
 
-let arr = [];
-for (let i = 1000; i < 10000; i++) {
-  arr.push(Math.trunc(i * Math.random()));
-}
-//arr.sort(() => 0.5 - Math.random());
-arr.sort((a, b) => (a > b ? 1 : -1));
-console.log(JSON.stringify(arr));
-
 //I came up with a new problem. There is no such task yet on Leetcode.com. I think the task will be of "medium" complexity.
 //Quabonacci number
 //Task: you need to output the n-th number in the sequence, which is the addition of the previous 4 values. Formula F(n) = F[n-1] + F[n-2] + F[n-3] + F[n-4]. F[0] = 0, F[1] = 1, F[2] = 1, F[3] = 2. Condition: the output must be without abbreviations of a large number. Example 1: input: 4 output: 4, explanation: 0 + 1 + 1 + 2 = 4. Example 2: input: 5 output: 8, explanation: 1 + 1 + 2 + 4 = 8 Example 3: input: 150, output: 1657004451652528827031117247964994651386240. Constraints: 0 <= n <= 100000
