@@ -6,6 +6,7 @@
  */
 var moveZeroes = nums => {
   let count = 0;
+
   nums.forEach(el => (count = el === 0 ? count + 1 : count));
   for (let i = 0; i < nums.length - count; i++) {
     if (nums[i] === 0) {
