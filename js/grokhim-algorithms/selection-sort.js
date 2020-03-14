@@ -1,10 +1,10 @@
 "use strict";
-// dont work
+
 const findSmallest = arr => {
   let smallest = arr[0];
   let smallestIndex = 0;
 
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 1; i < arr.length; i++) {
     if (arr[i] < smallest) {
       smallest = arr[i];
       smallestIndex = i;
@@ -19,7 +19,7 @@ const selectionSort = arr => {
 
   while (arr.length) {
     let smallest = findSmallest(arr);
-    newArr.push(arr.pop(smallest));
+    newArr.push(...arr.splice(smallest, 1));
   }
 
   return newArr;
