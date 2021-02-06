@@ -8,10 +8,10 @@ const PostList = {
 const Post = { template: `<h2>Пост: $route.:id<h2>` };
 
 const routes = [
-  { path: "/learnJS/js/test-task/vue/", component: Home },
-  { path: "/learnJS/js/test-task/vue/post-list", component: PostList },
-  { path: "/learnJS/js/test-task/vue/post-:id", component: Post },
-  { path: "/learnJS/js/test-task/vue/*", component: NotFound }
+  { path: "/learnJS/js/test-task/vue-old/", component: Home },
+  { path: "/learnJS/js/test-task/vue-old/post-list", component: PostList },
+  { path: "/learnJS/js/test-task/vue-old/post-:id", component: Post },
+  { path: "/learnJS/js/test-task/vue-old/*", component: NotFound }
 ];
 
 const router = new VueRouter({
